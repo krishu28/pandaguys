@@ -67,3 +67,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.myhidden {
+  display: block; /* Change to block for transition */
+  opacity: 0; /* Initially hidden */
+  position: absolute;
+  width: 40%;
+  margin-top: 2%;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition */
+  transform: translateY(10px); /* Optional: slight downward shift */
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.myblock:hover .myhidden {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to original position */
+  pointer-events: auto; /* Enable interaction on hover */
+}

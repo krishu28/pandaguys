@@ -1,9 +1,8 @@
-'use client'
-
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from "/panda_logo.png";
+
 const navigation = [
   { name: 'Home', href: '#' },
   { name: 'About', href: '#' },
@@ -17,7 +16,7 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-white">
+    <div className="bg-white ">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
@@ -40,12 +39,23 @@ export default function Example() {
               <Bars3Icon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden myblock lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-md font-semibold leading-6 text-gray-900">
+              <a key={item.name} href={item.href} className="text-lg font-bold leading-6 text-gray-900">
                 {item.name}
               </a>
+                  
             ))}
+            <div className="myhidden ">
+                   <ul className="bg-gray-300">
+                     <li>Item 1</li>
+                     <li>Item 2</li>
+                     <li>Item 3</li>
+                     <li>Item 4</li>
+                     <li>Item 5</li>
+                   </ul>
+                 </div>
+             
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-md bg-gray-100 rounded-md p-3 font-semibold leading-6 text-gray-900">
@@ -84,6 +94,8 @@ export default function Example() {
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
                       {item.name}
+
+                 
                     </a>
                   ))}
                 </div>
